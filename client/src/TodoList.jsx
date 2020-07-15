@@ -1,10 +1,16 @@
 import React from "react";
 
-export default function TodoList() {
+export default function TodoList(props) {
+  const removeTask = (id) => {
+    props.remove(id);
+  }
+  
   return (
     <div>
-      <li>Cuci Baju <button>Hapus</button></li>
-      <li>Masak Nasi <button>Hapus</button></li>
+      {props.tasks.map(task => {
+        return <li key={task.id}>{task.task} <button onClick={removeTask.bind(TodoList, task.id)}>Hapus</button></li>;
+        // return <li key={task.id}>{task.task} <button>Hapus</button></li>;
+      })}
     </div>
   );
 }

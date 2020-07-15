@@ -5,7 +5,7 @@ import uuid from 'uuid/v1';
 
 function App() {
   const [tasks, setTasks] = useState([
-    {task: "Cuci Baju", id: uuid() },
+    {task: "Cuci Baju", id: uuid()},
     {task: "Masak Nasi", id: uuid()}
   ]);
 
@@ -32,8 +32,13 @@ function App() {
   return (
     <div className="App">
       <h1>Pekerjaan Rumah Yang Perlu Dilakukan</h1>
-      <input type='text' value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
-      <button onClick={handleSubmit}>Tambah</button>
+      <form>
+        <label>
+          Tulis Pekerjaan
+          <input type='text' value={newTask} onChange={(e) => setNewTask(e.target.value)}/>
+        </label>
+        <button onClick={handleSubmit}>Tambah</button>
+      </form>
       <TodoList tasks={tasks} remove={remove.bind(App)} />
     </div>
   );

@@ -16,6 +16,10 @@ test('Renders App Correctly', () => {
   expect(elementInput.value).toBe('');
   expect(screen.getByText(/Berenang/i)).toBeInTheDocument();
 
+  // Expects user can't add empty task 
+  fireEvent.click(elementButton);
+  expect(screen.getAllByRole('listitem')).length == 3;
+
   // Expects remove button works successfully
   const removeButton = (screen.getByText(/Berenang/i)).querySelector('button');
   fireEvent.click(removeButton);

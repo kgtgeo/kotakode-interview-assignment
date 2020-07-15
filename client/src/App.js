@@ -20,6 +20,9 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(newTask);
+    if(newTask === ''){
+      return;
+    }
     addTasks(newTask);
     setNewTask('');
   };

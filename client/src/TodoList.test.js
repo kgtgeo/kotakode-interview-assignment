@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
 import TodoList from './TodoList';
 import uuid from 'uuid/v1';
 
@@ -17,19 +16,6 @@ test('Renders Todo List Correctly', () => {
   expect(linkElement).toBeInTheDocument();
   const linkElement2 = getByText(/minum air/i);
   expect(linkElement2).toBeInTheDocument(); 
-
-  // Expects remove button works correctly
-  // const elementButton = linkElement.querySelector('button');
-  // fireEvent.click(elementButton);
-
-  // console.log(linkElement);
-  // screen.debug(linkElement);
 });
 
   
-  // console.log("Dibawah hasil render\n");
-  // console.log(render(
-  //   <TodoList tasks={[
-  //     {task: "masak ikan", id: uuid()},
-  //     {task: "minum air", id: uuid()}
-  //   ]} />));

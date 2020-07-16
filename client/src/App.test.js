@@ -24,5 +24,4 @@ test('Renders App Correctly', () => {
   const removeButton = (screen.getByText(/Berenang/i)).querySelector('button');
   fireEvent.click(removeButton);
   expect(screen.queryByText(/Berenang/i)).toBeNull();
-
 });
